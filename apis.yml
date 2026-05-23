@@ -1,0 +1,299 @@
+aid: mercadopago
+name: Mercado Pago
+description: >-
+  Mercado Pago is the payments and financial-services arm of Mercado Libre,
+  Latin America's largest e-commerce and fintech platform. Its developer
+  portal at developers.mercadopago.com exposes a rich payments stack -
+  Checkout Pro (hosted), Checkout Bricks (composable web components),
+  Checkout API (full server-side control), Subscriptions, Payment Links,
+  Point (in-person card reader), and QR payments - backed by REST APIs and
+  official SDKs in Node.js, Python, PHP, Ruby, Java, .NET, plus a CLI and an
+  MCP server for AI agents. Regional portals (.com.ar, .com.br, .com.mx,
+  etc.) localise the docs and pricing per LATAM market.
+type: Index
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+access: 3rd-Party
+position: Producer
+created: '2026-05-23'
+modified: '2026-05-23'
+tags:
+  - Payments
+  - Checkout
+  - Subscriptions
+  - POS
+  - QR
+  - SDKs
+  - Latin America
+  - Brazil
+  - Argentina
+  - Mexico
+  - Fintech
+url: >-
+  https://raw.githubusercontent.com/api-evangelist/mercadopago/refs/heads/main/apis.yml
+specificationVersion: '0.20'
+apis:
+  - aid: mercadopago:payments
+    name: Mercado Pago Payments API
+    description: >-
+      Core REST API for creating and managing payments across cards,
+      account-money, bank transfer (Pix in Brazil), boleto, and other LATAM
+      methods. Supports capture, refund, partial refund, and status
+      retrieval.
+    humanURL: https://www.mercadopago.com.ar/developers/en/reference/payments/_payments/post
+    baseURL: https://api.mercadopago.com
+    tags:
+      - Payments
+      - Checkout
+      - Refunds
+    properties:
+      - type: Documentation
+        url: https://www.mercadopago.com.ar/developers/en/reference
+  - aid: mercadopago:checkout-pro
+    name: Mercado Pago Checkout Pro
+    description: >-
+      Hosted, pre-configured checkout experience. Merchants create a
+      preference via API, then redirect the buyer to the Mercado Pago hosted
+      page that handles UI, payment-method selection, and 3DS, returning to
+      a callback URL on completion.
+    humanURL: https://www.mercadopago.com.ar/developers/en/docs/checkout-pro/landing
+    baseURL: https://api.mercadopago.com
+    tags:
+      - Checkout
+      - Hosted
+      - Preferences
+    properties:
+      - type: Documentation
+        url: https://www.mercadopago.com.ar/developers/en/docs/checkout-pro/landing
+  - aid: mercadopago:checkout-bricks
+    name: Mercado Pago Checkout Bricks
+    description: >-
+      Composable web components ("bricks") that merchants embed in their own
+      checkout UI - card form, wallet, payment-method picker, status screen.
+      Lets merchants assemble a branded checkout while Mercado Pago handles
+      PCI scope.
+    humanURL: https://www.mercadopago.com.ar/developers/en/docs/checkout-bricks/landing
+    baseURL: https://api.mercadopago.com
+    tags:
+      - Checkout
+      - Web Components
+      - Bricks
+    properties:
+      - type: Documentation
+        url: https://www.mercadopago.com.ar/developers/en/docs/checkout-bricks/landing
+  - aid: mercadopago:checkout-api
+    name: Mercado Pago Checkout API
+    description: >-
+      Full server-side checkout control: tokenise cards client-side,
+      create a payment server-side, manage 3DS challenges, and handle
+      capture and refund - all without redirecting the buyer.
+    humanURL: https://www.mercadopago.com.ar/developers/en/docs/checkout-api/landing
+    baseURL: https://api.mercadopago.com
+    tags:
+      - Checkout
+      - Card Payments
+      - 3DS
+    properties:
+      - type: Documentation
+        url: https://www.mercadopago.com.ar/developers/en/docs/checkout-api/landing
+  - aid: mercadopago:subscriptions
+    name: Mercado Pago Subscriptions API
+    description: >-
+      Recurring-payment subscriptions with scheduling, plans, free trial,
+      proration, and pause / resume / cancel. Supports both subscription
+      plans (shared) and per-customer pre-approved schedules.
+    humanURL: https://www.mercadopago.com.ar/developers/en/docs/subscriptions/landing
+    baseURL: https://api.mercadopago.com
+    tags:
+      - Subscriptions
+      - Recurring
+      - Plans
+    properties:
+      - type: Documentation
+        url: https://www.mercadopago.com.ar/developers/en/docs/subscriptions/landing
+  - aid: mercadopago:payment-links
+    name: Mercado Pago Payment Links API
+    description: >-
+      No-code / low-code link generation for collecting a one-off or
+      recurring payment via shareable URL or button - SMS, WhatsApp, email,
+      or social channels.
+    humanURL: https://www.mercadopago.com.ar/developers/en/docs/payment-link/landing
+    baseURL: https://api.mercadopago.com
+    tags:
+      - Payment Links
+      - Collection
+    properties:
+      - type: Documentation
+        url: https://www.mercadopago.com.ar/developers/en/docs/payment-link/landing
+  - aid: mercadopago:point
+    name: Mercado Pago Point API (POS)
+    description: >-
+      Integrates merchant systems with Mercado Pago Point card readers for
+      in-person payments. Push an amount to a paired terminal, receive the
+      authorization result, and reconcile via the same payment APIs.
+    humanURL: https://www.mercadopago.com.ar/developers/en/docs/mp-point/landing
+    baseURL: https://api.mercadopago.com
+    tags:
+      - POS
+      - In Person
+      - Card Reader
+    properties:
+      - type: Documentation
+        url: https://www.mercadopago.com.ar/developers/en/docs/mp-point/landing
+  - aid: mercadopago:qr
+    name: Mercado Pago QR API
+    description: >-
+      Static and dynamic QR code APIs for in-person collection, with
+      order-linked status retrieval and webhook callbacks.
+    humanURL: https://www.mercadopago.com.ar/developers/en/docs/qr-payments/landing
+    baseURL: https://api.mercadopago.com
+    tags:
+      - QR
+      - In Person
+      - Collections
+    properties:
+      - type: Documentation
+        url: https://www.mercadopago.com.ar/developers/en/docs/qr-payments/landing
+  - aid: mercadopago:webhooks
+    name: Mercado Pago Webhooks / Notifications
+    description: >-
+      Event-driven notifications for payments, refunds, chargebacks,
+      subscriptions, and merchant-account changes. Webhooks are signed so
+      receivers can verify authenticity.
+    humanURL: https://www.mercadopago.com.ar/developers/en/docs/your-integrations/notifications/webhooks
+    baseURL: customer-configured
+    tags:
+      - Webhooks
+      - Events
+      - Notifications
+    properties:
+      - type: Documentation
+        url: https://www.mercadopago.com.ar/developers/en/docs/your-integrations/notifications/webhooks
+  - aid: mercadopago:sdk-node
+    name: Mercado Pago Node.js SDK
+    description: >-
+      Official Node.js / TypeScript SDK wrapping the Mercado Pago REST APIs
+      for payments, preferences, subscriptions, and merchant orders.
+    humanURL: https://github.com/mercadopago/sdk-nodejs
+    baseURL: https://github.com/mercadopago/sdk-nodejs
+    tags:
+      - SDK
+      - Node.js
+      - TypeScript
+    properties:
+      - type: Repository
+        url: https://github.com/mercadopago/sdk-nodejs
+  - aid: mercadopago:sdk-python
+    name: Mercado Pago Python SDK
+    description: >-
+      Official Python SDK wrapping the Mercado Pago REST APIs.
+    humanURL: https://github.com/mercadopago/sdk-python
+    baseURL: https://github.com/mercadopago/sdk-python
+    tags:
+      - SDK
+      - Python
+    properties:
+      - type: Repository
+        url: https://github.com/mercadopago/sdk-python
+  - aid: mercadopago:sdk-php
+    name: Mercado Pago PHP SDK
+    description: >-
+      Official PHP SDK wrapping the Mercado Pago REST APIs.
+    humanURL: https://github.com/mercadopago/sdk-php
+    baseURL: https://github.com/mercadopago/sdk-php
+    tags:
+      - SDK
+      - PHP
+    properties:
+      - type: Repository
+        url: https://github.com/mercadopago/sdk-php
+  - aid: mercadopago:sdk-ruby
+    name: Mercado Pago Ruby SDK
+    description: >-
+      Official Ruby SDK wrapping the Mercado Pago REST APIs.
+    humanURL: https://github.com/mercadopago/sdk-ruby
+    baseURL: https://github.com/mercadopago/sdk-ruby
+    tags:
+      - SDK
+      - Ruby
+    properties:
+      - type: Repository
+        url: https://github.com/mercadopago/sdk-ruby
+  - aid: mercadopago:sdk-java
+    name: Mercado Pago Java SDK
+    description: >-
+      Official Java SDK wrapping the Mercado Pago REST APIs.
+    humanURL: https://github.com/mercadopago/sdk-java
+    baseURL: https://github.com/mercadopago/sdk-java
+    tags:
+      - SDK
+      - Java
+    properties:
+      - type: Repository
+        url: https://github.com/mercadopago/sdk-java
+  - aid: mercadopago:sdk-dotnet
+    name: Mercado Pago .NET SDK
+    description: >-
+      Official .NET / C# SDK wrapping the Mercado Pago REST APIs.
+    humanURL: https://github.com/mercadopago/sdk-dotnet
+    baseURL: https://github.com/mercadopago/sdk-dotnet
+    tags:
+      - SDK
+      - .NET
+      - C#
+    properties:
+      - type: Repository
+        url: https://github.com/mercadopago/sdk-dotnet
+  - aid: mercadopago:cli
+    name: Mercado Pago CLI
+    description: >-
+      Command-line interface for managing Mercado Pago integrations,
+      triggering test events, inspecting webhook deliveries, and scaffolding
+      sample apps.
+    humanURL: https://www.mercadopago.com.ar/developers/en/docs/cli/landing
+    baseURL: https://www.mercadopago.com.ar/developers/en/docs/cli/landing
+    tags:
+      - CLI
+      - Tooling
+      - DevEx
+    properties:
+      - type: Documentation
+        url: https://www.mercadopago.com.ar/developers/en/docs/cli/landing
+  - aid: mercadopago:mcp
+    name: Mercado Pago MCP Server
+    description: >-
+      Model Context Protocol server that exposes Mercado Pago APIs as tools
+      for AI agents and IDE assistants, enabling agent-driven payment and
+      checkout workflows.
+    humanURL: https://www.mercadopago.com.ar/developers/en/docs/mcp-server/landing
+    baseURL: https://www.mercadopago.com.ar/developers/en/docs/mcp-server/landing
+    tags:
+      - MCP
+      - AI
+      - Agents
+    properties:
+      - type: Documentation
+        url: https://www.mercadopago.com.ar/developers/en/docs/mcp-server/landing
+common:
+  - type: Website
+    url: https://www.mercadopago.com/
+  - type: Developers
+    url: https://www.mercadopago.com.ar/developers/en
+  - type: Documentation
+    url: https://www.mercadopago.com.ar/developers/en/docs
+  - type: APIReference
+    url: https://www.mercadopago.com.ar/developers/en/reference
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/mercadopago
+  - type: GitHub
+    url: https://github.com/mercadopago
+integrations:
+  - name: Shopify
+  - name: WooCommerce
+  - name: VTEX
+  - name: Tiendanube
+  - name: PrestaShop
+  - name: Salesforce Commerce Cloud
+  - name: Wix
+maintainers:
+  - FN: API Evangelist
+    url: https://apievangelist.com
