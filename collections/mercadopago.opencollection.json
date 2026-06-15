@@ -1,0 +1,277 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Mercado Pago REST API",
+    "version": "v1"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Payments",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create a payment",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.mercadopago.com/v1/payments"
+          },
+          "docs": "Create a payment"
+        },
+        {
+          "info": {
+            "name": "Search payments",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.mercadopago.com/v1/payments/search",
+            "params": [
+              {
+                "name": "status",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "external_reference",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "range",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "begin_date",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "end_date",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Search payments"
+        },
+        {
+          "info": {
+            "name": "Get a payment",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.mercadopago.com/v1/payments/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get a payment"
+        },
+        {
+          "info": {
+            "name": "Update a payment (capture, cancel, refund metadata)",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.mercadopago.com/v1/payments/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Update a payment (capture, cancel, refund metadata)"
+        },
+        {
+          "info": {
+            "name": "List refunds for a payment",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.mercadopago.com/v1/payments/:id/refunds",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List refunds for a payment"
+        },
+        {
+          "info": {
+            "name": "Refund a payment",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.mercadopago.com/v1/payments/:id/refunds",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Refund a payment"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Preferences",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create a checkout preference (Checkout Pro)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.mercadopago.com/checkout/preferences"
+          },
+          "docs": "Create a checkout preference (Checkout Pro)"
+        },
+        {
+          "info": {
+            "name": "Get a checkout preference",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.mercadopago.com/checkout/preferences/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get a checkout preference"
+        },
+        {
+          "info": {
+            "name": "Update a checkout preference",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.mercadopago.com/checkout/preferences/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Update a checkout preference"
+        },
+        {
+          "info": {
+            "name": "Search preferences",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.mercadopago.com/checkout/preferences/search"
+          },
+          "docs": "Search preferences"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Subscriptions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create a subscription (preapproval)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.mercadopago.com/preapproval"
+          },
+          "docs": "Create a subscription (preapproval)"
+        },
+        {
+          "info": {
+            "name": "Get a subscription",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.mercadopago.com/preapproval/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get a subscription"
+        },
+        {
+          "info": {
+            "name": "Update a subscription",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.mercadopago.com/preapproval/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Update a subscription"
+        },
+        {
+          "info": {
+            "name": "Search subscriptions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.mercadopago.com/preapproval/search"
+          },
+          "docs": "Search subscriptions"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
