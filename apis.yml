@@ -274,6 +274,10 @@ apis:
       - type: Documentation
         url: https://www.mercadopago.com.ar/developers/en/docs/mcp-server/landing
 common:
+  - type: DomainSecurity
+    url: security/mercadopago-domain-security.yml
+  - type: Authentication
+    url: authentication/mercadopago-authentication.yml
   - type: Website
     url: https://www.mercadopago.com/
   - type: Developers
@@ -286,6 +290,8 @@ common:
     url: https://www.linkedin.com/company/mercadopago
   - type: GitHub
     url: https://github.com/mercadopago
+  - url: https://www.mercadopago.com.br/developers/en/news
+    type: Blog
 integrations:
   - name: Shopify
   - name: WooCommerce

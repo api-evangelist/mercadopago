@@ -1,0 +1,16 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/mercadopago-openapi.yml
+summary:
+  types:
+  - http
+schemes:
+- name: bearerAuth
+  type: http
+  scheme: bearer
+  bearerFormat: access_token
+  description: |-
+    Mercado Pago access token (ENV_ACCESS_TOKEN). Send as
+    "Authorization: Bearer {ACCESS_TOKEN}". HTTPS is required.
+  sources:
+  - openapi/mercadopago-openapi.yml
