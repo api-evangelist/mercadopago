@@ -274,6 +274,8 @@ apis:
       - type: Documentation
         url: https://www.mercadopago.com.ar/developers/en/docs/mcp-server/landing
 common:
+  - type: AgenticAccess
+    url: agentic-access/mercadopago-agentic-access.yml
   - type: DomainSecurity
     url: security/mercadopago-domain-security.yml
   - type: Authentication
