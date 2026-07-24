@@ -1,0 +1,70 @@
+openapi: 3.1.0
+info:
+  title: Mercado Pago REST Payments Subscriptions API
+  description: 'Mercado Pago REST API covering payments, Checkout Pro preferences, and
+
+    subscriptions (preapprovals). All requests authenticate with a Bearer access
+
+    token in the Authorization header.
+
+    '
+  version: v1
+  contact:
+    name: Mercado Pago Developers
+    url: https://www.mercadopago.com.ar/developers/en/reference
+servers:
+- url: https://api.mercadopago.com
+  description: Mercado Pago production API
+security:
+- bearerAuth: []
+tags:
+- name: Subscriptions
+paths:
+  /preapproval:
+    post:
+      tags:
+      - Subscriptions
+      summary: Create a subscription (preapproval)
+      responses:
+        '201':
+          description: Subscription created
+  /preapproval/{id}:
+    parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+    get:
+      tags:
+      - Subscriptions
+      summary: Get a subscription
+      responses:
+        '200':
+          description: Subscription
+    put:
+      tags:
+      - Subscriptions
+      summary: Update a subscription
+      responses:
+        '200':
+          description: Updated subscription
+  /preapproval/search:
+    get:
+      tags:
+      - Subscriptions
+      summary: Search subscriptions
+      responses:
+        '200':
+          description: Search results
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: access_token
+      description: 'Mercado Pago access token (ENV_ACCESS_TOKEN). Send as
+
+        "Authorization: Bearer {ACCESS_TOKEN}". HTTPS is required.
+
+        '
