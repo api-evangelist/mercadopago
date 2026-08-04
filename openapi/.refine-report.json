@@ -1,0 +1,18 @@
+{
+  "provider": "mercadopago",
+  "sources": [
+    "mercadopago-payments-api-openapi.yml",
+    "mercadopago-preferences-api-openapi.yml",
+    "mercadopago-subscriptions-api-openapi.yml"
+  ],
+  "outputs": [
+    "mercadopago-payments-api-openapi.yml",
+    "mercadopago-preferences-api-openapi.yml",
+    "mercadopago-subscriptions-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

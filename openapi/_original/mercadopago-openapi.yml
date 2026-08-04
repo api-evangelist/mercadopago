@@ -1,0 +1,169 @@
+openapi: 3.1.0
+info:
+  title: Mercado Pago REST API
+  description: |
+    Mercado Pago REST API covering payments, Checkout Pro preferences, and
+    subscriptions (preapprovals). All requests authenticate with a Bearer access
+    token in the Authorization header.
+  version: "v1"
+  contact:
+    name: Mercado Pago Developers
+    url: https://www.mercadopago.com.ar/developers/en/reference
+servers:
+  - url: https://api.mercadopago.com
+    description: Mercado Pago production API
+security:
+  - bearerAuth: []
+tags:
+  - name: Payments
+  - name: Preferences
+  - name: Subscriptions
+paths:
+  /v1/payments:
+    post:
+      tags: [Payments]
+      summary: Create a payment
+      responses:
+        "201":
+          description: Payment created
+  /v1/payments/search:
+    get:
+      tags: [Payments]
+      summary: Search payments
+      parameters:
+        - name: status
+          in: query
+          schema:
+            type: string
+        - name: external_reference
+          in: query
+          schema:
+            type: string
+        - name: range
+          in: query
+          schema:
+            type: string
+        - name: begin_date
+          in: query
+          schema:
+            type: string
+        - name: end_date
+          in: query
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Search results
+  /v1/payments/{id}:
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+    get:
+      tags: [Payments]
+      summary: Get a payment
+      responses:
+        "200":
+          description: Payment
+    put:
+      tags: [Payments]
+      summary: Update a payment (capture, cancel, refund metadata)
+      responses:
+        "200":
+          description: Updated payment
+  /v1/payments/{id}/refunds:
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+    post:
+      tags: [Payments]
+      summary: Refund a payment
+      responses:
+        "201":
+          description: Refund created
+    get:
+      tags: [Payments]
+      summary: List refunds for a payment
+      responses:
+        "200":
+          description: Refunds list
+  /checkout/preferences:
+    post:
+      tags: [Preferences]
+      summary: Create a checkout preference (Checkout Pro)
+      responses:
+        "201":
+          description: Preference created
+  /checkout/preferences/{id}:
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+    get:
+      tags: [Preferences]
+      summary: Get a checkout preference
+      responses:
+        "200":
+          description: Preference
+    put:
+      tags: [Preferences]
+      summary: Update a checkout preference
+      responses:
+        "200":
+          description: Updated preference
+  /checkout/preferences/search:
+    get:
+      tags: [Preferences]
+      summary: Search preferences
+      responses:
+        "200":
+          description: Search results
+  /preapproval:
+    post:
+      tags: [Subscriptions]
+      summary: Create a subscription (preapproval)
+      responses:
+        "201":
+          description: Subscription created
+  /preapproval/{id}:
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+    get:
+      tags: [Subscriptions]
+      summary: Get a subscription
+      responses:
+        "200":
+          description: Subscription
+    put:
+      tags: [Subscriptions]
+      summary: Update a subscription
+      responses:
+        "200":
+          description: Updated subscription
+  /preapproval/search:
+    get:
+      tags: [Subscriptions]
+      summary: Search subscriptions
+      responses:
+        "200":
+          description: Search results
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: access_token
+      description: |
+        Mercado Pago access token (ENV_ACCESS_TOKEN). Send as
+        "Authorization: Bearer {ACCESS_TOKEN}". HTTPS is required.
